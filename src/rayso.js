@@ -81,7 +81,6 @@ module.exports = class RaySo {
         this.padding = padding;
         this.language = language;
         this.localPreview = localPreview;
-        this.browserPath = browserPath;
         this.debug = debug;
     }
 
