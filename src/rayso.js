@@ -72,7 +72,6 @@ module.exports = class RaySo {
         padding = 32,
         language = 'auto',
         localPreview = false,
-        browserPath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
         debug = false,
     } = {}) {
         this.title = title;
@@ -102,7 +101,6 @@ module.exports = class RaySo {
                 padding: this.padding,
                 language: this.language,
                 localPreview: this.localPreview,
-                browserPath: this.browserPath,
             });
 
             if (!parametersValidation.ok)
