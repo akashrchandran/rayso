@@ -142,7 +142,6 @@ module.exports = class RaySo {
                     '--disable-gpu',
                 ],
                 headless: true,
-                executablePath: this.browserPath,
                 ignoreHTTPSErrors: true,
             });
 
@@ -386,15 +385,6 @@ module.exports = class RaySo {
 
             if (typeof params.localPreview !== 'boolean')
                 errors.push('Local preview parameter must be type of boolean.');
-
-            if (typeof params.browserPath !== 'string') {
-                errors.push('Browser path parameter must be type of string.');
-            } else if (
-                !params.browserPath.match(/^(.+)\/([^\/]+)|(.+)\\([^\\]+)$/g)
-            ) {
-                errors.push(
-                    'The browser path is incorrect. Please check it and try again.',
-                );
             }
 
             if (typeof params.theme !== 'string') {
