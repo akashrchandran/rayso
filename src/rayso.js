@@ -53,7 +53,7 @@ module.exports = class RaySo {
             Creates local file (example.png) of the output. 
             Buffer is still being returned. 
             Default is false.
-        * @param {String} [options.browserPath]
+        * @param {String} [options]
             Full path to your chrome browser's folder. 
             Default is C:\Program Files\Google\Chrome\Application\chrome.exe
         * @param {(
@@ -385,7 +385,6 @@ module.exports = class RaySo {
 
             if (typeof params.localPreview !== 'boolean')
                 errors.push('Local preview parameter must be type of boolean.');
-            }
 
             if (typeof params.theme !== 'string') {
                 errors.push('Theme parameter must be type of string.');
