@@ -7,7 +7,7 @@
  * Author: github.com/s0ftik3
  */
 
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 
 module.exports = class RaySo {
     /**
