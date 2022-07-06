@@ -1,3 +1,6 @@
+# This repo is a fork of [rayso-api](https://github.com/s0ftik3/rayso-api) created by [s0ftik3](https://github.com/s0ftik3)
+
+> I have only added support to be deployed on Heroku and all other work credit goes to [s0ftik3](https://github.com/s0ftik3)
 # Ray.so API
 
 [![version](https://badgen.net/npm/v/rayso-api)](https://npmjs.com/package/rayso-api)
