@@ -141,7 +141,7 @@ module.exports = class RaySo {
                     '--no-zygote',
                     '--disable-gpu',
                 ],
-                headless: true,
+                headless: "new",
                 ignoreHTTPSErrors: true,
             });
 
