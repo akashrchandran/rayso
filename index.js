@@ -13,7 +13,7 @@ import {
     CardPadding,
     CardProgrammingLanguage,
 } from './src/entities/options.js'
-import { InvalidParameterException } from './helpers/exceptions.js';
+import { InvalidParameterException } from './src/helpers/exceptions.js';
 
 export { RaySo, CardTheme, CardPadding, CardProgrammingLanguage, InvalidParameterException }
 export default RaySo
