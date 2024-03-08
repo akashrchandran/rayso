@@ -179,16 +179,13 @@ export class RaySo {
                 width: 8192,
                 height: 2048,
             })
-
             await page.evaluate(() => {
                 document.querySelector(
-                    '#frame > div.drag-control-points > div.handle.left'
+                    '#__next > div > div.Frame_frameContainer__9f_MW > div > div.ResizableFrame_windowSizeDragPoint__c4UWw.ResizableFrame_left__N4jKM'
                 ).style.display = 'none'
                 document.querySelector(
-                    '#frame > div.drag-control-points > div.handle.right'
+                    '#__next > div > div.Frame_frameContainer__9f_MW > div > div.ResizableFrame_windowSizeDragPoint__c4UWw.ResizableFrame_right__Me34E'
                 ).style.display = 'none'
-                document.querySelector('#app > main > section').style.display =
-                    'none'
             })
 
             if (this.debug) {
@@ -210,19 +207,22 @@ export class RaySo {
             if (!this.background) {
                 await page.evaluate(() => {
                     document.querySelector(
-                        '#frame > div.app-frame-container > div.app-frame'
-                    ).style.borderRadius = '0'
+                        '#__next > div > div.Frame_frameContainer__9f_MW > div > div:nth-child(3) > div > div.Frame_window__sL5QZ.Frame_withBorder__UeYCc'
+                    ).style.borderRadius = '0';
+                    document.querySelector(
+                        '#__next > div > div.Frame_frameContainer__9f_MW > div > div:nth-child(3) > div'
+                    ).style.background = '#000';
+
                 })
 
-                const element = await page.$('div[class="app-frame"]')
-
+                const element = await page.$('div[class="Frame_window__sL5QZ Frame_withBorder__UeYCc"]')
                 if (this.debug) {
                     console.info('[======----] Selected code frame element...')
                 }
 
                 return element
             } else {
-                const element = await page.$('div[id="frame"]')
+                const element = await page.$('div[class="Frame_frame__CAiHj"]')
 
                 if (this.debug) {
                     console.info('[======----] Selected code frame element...')
@@ -291,7 +291,7 @@ export class RaySo {
      */
     buildPageUrl(code) {
         try {
-            return `https://ray.so/?title=${encodeURIComponent(
+            return `https://ray.so/#title=${encodeURIComponent(
                 this.title
             )}&theme=${this.theme}&spacing=${this.padding}&background=${
                 this.background
