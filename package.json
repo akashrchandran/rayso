@@ -1,0 +1,28 @@
+{
+    "name": "rayso",
+    "version": "1.0.0",
+    "description": "Unofficial API for ray.so that turns your code into beautiful images.",
+    "main": "index.js",
+    "type": "module",
+    "homepage": "https://github.com/akashrchandran/rayso#readme",
+    "repository": "https://github.com/akashrchandran/rayso",
+    "scripts": {
+        "test": "node examples/default.js && node examples/custom.js && node examples/noBackground.js",
+        "prettier": "npx prettier --write ."
+    },
+    "keywords": [
+        "ray.so",
+        "snippet",
+        "api",
+        "code preview",
+        "carbon"
+    ],
+    "author": "akashrchandran <chandranrakash@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "puppeteer": "^19.3.0"
+    },
+    "devDependencies": {
+        "prettier": "^2.8.0"
+    }
+}
