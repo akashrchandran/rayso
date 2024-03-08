@@ -109,7 +109,7 @@ const raySo = new RaySo({
 ### Output without background
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ background: false })
 ```
 
@@ -122,7 +122,7 @@ These are all the available themes, so far. As soon Ray.So has a new theme, it w
 ### Candy
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'candy' })
 ```
 
@@ -131,7 +131,7 @@ const raySo = new RaySo({ theme: 'candy' })
 ### Crimson
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'crimson' })
 ```
 
@@ -140,7 +140,7 @@ const raySo = new RaySo({ theme: 'crimson' })
 ### Falcon
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'falcon' })
 ```
 
@@ -149,7 +149,7 @@ const raySo = new RaySo({ theme: 'falcon' })
 ### Meadow
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'meadow' })
 ```
 
@@ -158,7 +158,7 @@ const raySo = new RaySo({ theme: 'meadow' })
 ### Midnight
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'midnight' })
 ```
 
@@ -167,7 +167,7 @@ const raySo = new RaySo({ theme: 'midnight' })
 ### Raindrop
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'raindrop' })
 ```
 
@@ -176,7 +176,7 @@ const raySo = new RaySo({ theme: 'raindrop' })
 ### Sunset
 
 ```javascript
-import RaySo from 'rayso-api'
+import RaySo from 'rayso'
 const raySo = new RaySo({ theme: 'sunset' })
 ```
 
