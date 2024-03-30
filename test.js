@@ -6,7 +6,7 @@ import RaySo, {
 
 const raySo = new RaySo({
     title: 'Custom Title',
-    theme: CardTheme.RAINDROP,
+    theme: 'CardTheme.MONO',
     padding: CardPadding.xl,
     language: CardProgrammingLanguage.JAVASCRIPT,
     debug: true,

@@ -119,6 +119,26 @@ const raySo = new RaySo({ background: false })
 
 These are all the available themes, so far. As soon Ray.So has a new theme, it will appear here. Default theme `breeze` is not listed here, you saw it in the first picture of this README.
 
+
+### Breeze
+
+```javascript
+import RaySo from 'rayso'
+const raySo = new RaySo({ theme: 'breeze' })
+```
+
+[![breeze](https://i.ibb.co/0mwBr3Z/breeze.png)](https://npmjs.com/package/rayso)
+
+
+### Mono
+
+```javascript
+import RaySo from 'rayso'
+const raySo = new RaySo({ theme: 'mono' })
+```
+
+[![mono](https://i.ibb.co/tLrHn9M/mono.png)](https://npmjs.com/package/rayso)
+
 ### Candy
 
 ```javascript
