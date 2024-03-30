@@ -8,6 +8,7 @@
  */
 
 export const CardTheme = {
+  MONO: "mono",
   BREEZE: "breeze",
   CANDY: "candy",
   CRIMSON: "crimson",
