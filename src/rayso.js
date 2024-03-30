@@ -294,7 +294,7 @@ export class RaySo {
         try {
             return `https://ray.so/#title=${encodeURIComponent(
                 this.title
-            )}&theme=${this.theme}&spacing=${this.padding}&background=${this.background
+            )}&theme=${this.theme}&padding=${this.padding}&background=${this.background
                 }&darkMode=${this.darkMode}&code=${encodeURIComponent(
                     this.stringToBase64(code)
                 )}&language=${encodeURIComponent(this.language)}`

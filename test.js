@@ -6,13 +6,13 @@ import RaySo, {
 
 const raySo = new RaySo({
     title: 'Custom Title',
-    theme: "affas",
-    padding: CardPadding.md,
-    language: CardProgrammingLanguage.AUTO,
+    theme: 'CardTheme.MONO',
+    padding: CardPadding.xl,
+    language: CardProgrammingLanguage.JAVASCRIPT,
     debug: true,
     localPreview: true,
 })
-raySo.cook(`console.log('Hello, World!');`)
+raySo.cook(`console.log('Hello From JavaScript!');`)
     .then(response => {
         console.log(
             '> Received an image buffer. Buffer length: %s',
