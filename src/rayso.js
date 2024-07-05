@@ -175,17 +175,19 @@ export class RaySo {
             const page = await browser.newPage()
 
             await page.goto(this.buildPageUrl(code))
-
             await page.setViewport({
                 width: 8192,
                 height: 2048,
             })
+            await page.waitForSelector('body > div > main > div.code_app__D8hzR > div.Controls_controls__Tz_C5', {
+                visible: true,
+            });
             await page.evaluate(() => {
                 document.querySelector(
-                    '#__next > div > div.Frame_frameContainer__9f_MW > div > div.ResizableFrame_windowSizeDragPoint__c4UWw.ResizableFrame_left__N4jKM'
+                    'body > div > main > div.code_app__D8hzR > div.Frame_frameContainer__GrOiz > div > div.ResizableFrame_windowSizeDragPoint__MeF70.ResizableFrame_left__5GSAj'
                 ).style.display = 'none'
                 document.querySelector(
-                    '#__next > div > div.Frame_frameContainer__9f_MW > div > div.ResizableFrame_windowSizeDragPoint__c4UWw.ResizableFrame_right__Me34E'
+                    'body > div > main > div.code_app__D8hzR > div.Frame_frameContainer__GrOiz > div > div.ResizableFrame_windowSizeDragPoint__MeF70.ResizableFrame_right__MUj0x'
                 ).style.display = 'none'
             })
 
@@ -205,32 +207,13 @@ export class RaySo {
      */
     async getFrameElement(page) {
         try {
-            if (!this.background) {
-                await page.evaluate(() => {
-                    document.querySelector(
-                        '#__next > div > div.Frame_frameContainer__9f_MW > div > div:nth-child(3) > div > div.Frame_window__sL5QZ.Frame_withBorder__UeYCc'
-                    ).style.borderRadius = '0';
-                    document.querySelector(
-                        '#__next > div > div.Frame_frameContainer__9f_MW > div > div:nth-child(3) > div'
-                    ).style.background = '#000';
+            const element = await page.$('div[class="ResizableFrame_resizableFrame__RZ6bb"]')
 
-                })
-
-                const element = await page.$('div[class="Frame_window__sL5QZ Frame_withBorder__UeYCc"]')
-                if (this.debug) {
-                    console.info('[======----] Selected code frame element...')
-                }
-
-                return element
-            } else {
-                const element = await page.$('div[class="Frame_frame__CAiHj"]')
-
-                if (this.debug) {
-                    console.info('[======----] Selected code frame element...')
-                }
-
-                return element
+            if (this.debug) {
+                console.info('[======----] Selected code frame element...')
             }
+
+            return element
         } catch (err) {
             console.error(err)
         }
