@@ -343,7 +343,7 @@ export class RaySo {
                 errors.push('Theme parameter must be type of string.')
             } else if (!themes.includes(params.theme.toLowerCase())) {
                 errors.push(
-                    'There is no such a theme. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset.'
+                    'There is no such a theme. Available themes: ' + themes.join(', ')
                 )
             }
 
