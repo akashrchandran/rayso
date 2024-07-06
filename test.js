@@ -6,8 +6,8 @@ import RaySo, {
 
 const raySo = new RaySo({
     title: 'Custom Title',
-    theme: CardTheme.BREEZE,
-    padding: CardPadding.xl,
+    theme: CardTheme.VERCEL,
+    padding: CardPadding.sm,
     language: CardProgrammingLanguage.JAVASCRIPT,
     debug: true,
     localPreview: true,

@@ -8,6 +8,14 @@
  */
 
 export const CardTheme = {
+  VERCEL : "vercel",
+  SUPABASE: "supabase",
+  TAILWIND: "tailwind",
+  BITMAP: "bitmap",
+  NOIR : "noir",
+  ICE: "ice",
+  SAND: "sand",
+  FOREST: "forest",
   MONO: "mono",
   BREEZE: "breeze",
   CANDY: "candy",
