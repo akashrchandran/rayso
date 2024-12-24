@@ -202,6 +202,9 @@ const raySo = new RaySo({ theme: 'sunset' })
 
 [![sunset](https://i.ibb.co/Q8rFCVn/sunset.png)](https://npmjs.com/package/rayso)
 
+> [!NOTE]
+> There are more themes available, please check [option.js](https://github.com/akashrchandran/rayso/blob/main/src/entities/options.js) file to see the entire list.
+
 ## Credits
 
 -   The source is [ray.so](https://ray.so) website.
