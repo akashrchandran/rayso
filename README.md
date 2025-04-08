@@ -64,6 +64,7 @@ const raySo = new RaySo()
 
 | Parameter          | Default value      | Type             | Description                                                                                                                                    |
 |--------------------|--------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `width`            | `"" (auto-sized)`  | String or Number | Sets the image width in pixels. Accepts numbers (e.g., `700`) or strings with digits (e.g., `"700"`). Value must be between 520 and 920. Defaults to auto-sizing if omitted or empty. |
 | `title `           | `"Untitled-1"`     | String           | The title will be displayed on top of the code box.                                                                                            |
 | `theme`            | `"breeze"`         | String           | There are several options of how your box will look like. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset |
 | `background`       | `true`             | Boolean          | If disabled, it will create an image of code box only, without background.                                                                     |
@@ -94,6 +95,7 @@ import RaySo, {
     CardProgrammingLanguage,
 } from 'rayso'
 const raySo = new RaySo({
+    width: 750,
     title: 'Custom Title',
     theme: CardTheme.CANDY,
     padding: CardPadding.md,
