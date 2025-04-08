@@ -320,26 +320,30 @@ export class RaySo {
             const paddings = Object.values(CardPadding)
             const languages = Object.values(CardProgrammingLanguage)
 
-            if (params.width != null && params.width !== '') {
+            if (params.width != null) {
+                let numericWidth = NaN;
 
-                if (typeof params.width !== 'string') {
-                    errors.push('Width parameter must be a string (e.g., "700"). Received type: ' + typeof params.width);
-                } else {
+                if (typeof params.width === 'number') {
+                    numericWidth = params.width;
+                } else if (typeof params.width === 'string') {
                     const trimmedWidth = params.width.trim();
-
-                    if (!/^\d+$/.test(trimmedWidth)) {
-                        errors.push('Width string must contain only digits (e.g., "700"). Received: "' + trimmedWidth + '"');
-                    } else {
-                        const widthValue = parseInt(trimmedWidth, 10);
-
-                        if (isNaN(widthValue)) {
-                             errors.push(`Could not parse width string "${trimmedWidth}" into a valid number.`);
-                        }
-                        else if (widthValue < 520 || widthValue > 920) {
-                            errors.push(`Width value must be between 520 and 920 (inclusive). Received: ${widthValue}`);
-                        }
-
+                    if (trimmedWidth !== '') {
+                         numericWidth = +trimmedWidth;
                     }
+
+                } else {
+
+                    errors.push('Width parameter must be a number or a string. Received type: ' + typeof params.width);
+                }
+
+                if (!isNaN(numericWidth)) {
+                    if (numericWidth < 520 || numericWidth > 920) {
+                        errors.push(`Width value must be between 520 and 920 (inclusive). Received: ${numericWidth}`);
+                    }
+                } else {
+                     if ((typeof params.width === 'string' && params.width.trim() !== '') || typeof params.width === 'number') {
+                          errors.push(`Invalid numeric value for width parameter. Received: ${params.width}`);
+                     }
                 }
             }
 
