@@ -5,6 +5,7 @@ import RaySo, {
 } from './index.js'
 
 const raySo = new RaySo({
+    width: '920',
     title: 'Custom Title',
     theme: CardTheme.MINTLIFY,
     padding: CardPadding.lg,

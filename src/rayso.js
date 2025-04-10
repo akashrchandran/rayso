@@ -22,6 +22,9 @@ export class RaySo {
      * @param {Object} [options]
             Query parameters to be used to 
             construct the completed request.
+        * @param {String} [options.width]
+            The width of the image.
+            default is automatically calculated.
         * @param {String} [options.title]
             The title of the code snippet.
             Default is 'Untitled-1'.
@@ -73,6 +76,7 @@ export class RaySo {
             Default is false.
     */
     constructor({
+        width = '',
         title = '',
         theme = CardTheme.BREEZE,
         background = true,
@@ -83,6 +87,7 @@ export class RaySo {
         localPreviewPath = '',
         debug = false,
     } = {}) {
+        this.width = width
         this.title = title
         this.theme = theme
         this.background = background
@@ -103,6 +108,7 @@ export class RaySo {
     async cook(code) {
         try {
             const parametersValidation = this.validateParameters({
+                width: this.width,
                 title: this.title,
                 theme: this.theme,
                 background: this.background,
@@ -280,7 +286,7 @@ export class RaySo {
             )}&theme=${this.theme}&padding=${this.padding}&background=${this.background
                 }&darkMode=${this.darkMode}&code=${encodeURIComponent(
                     this.stringToBase64(code)
-                )}&language=${encodeURIComponent(this.language)}`
+                )}&language=${encodeURIComponent(this.language)}&width=${encodeURIComponent(this.width)}`
         } catch (err) {
             console.error(err)
         }
@@ -313,6 +319,33 @@ export class RaySo {
             const themes = Object.values(CardTheme)
             const paddings = Object.values(CardPadding)
             const languages = Object.values(CardProgrammingLanguage)
+
+            if (params.width != null) {
+                let numericWidth = NaN;
+
+                if (typeof params.width === 'number') {
+                    numericWidth = params.width;
+                } else if (typeof params.width === 'string') {
+                    const trimmedWidth = params.width.trim();
+                    if (trimmedWidth !== '') {
+                         numericWidth = +trimmedWidth;
+                    }
+
+                } else {
+
+                    errors.push('Width parameter must be a number or a string. Received type: ' + typeof params.width);
+                }
+
+                if (!isNaN(numericWidth)) {
+                    if (numericWidth < 520 || numericWidth > 920) {
+                        errors.push(`Width value must be between 520 and 920 (inclusive). Received: ${numericWidth}`);
+                    }
+                } else {
+                     if ((typeof params.width === 'string' && params.width.trim() !== '') || typeof params.width === 'number') {
+                          errors.push(`Invalid numeric value for width parameter. Received: ${params.width}`);
+                     }
+                }
+            }
 
             if (typeof params.title !== 'string')
                 errors.push('Title parameter must be type of string.')

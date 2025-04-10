@@ -13,6 +13,7 @@ import RaySo, {
     CardProgrammingLanguage,
 } from '../index.js'
 const raySo = new RaySo({
+    width: '600',
     title: 'Custom Title',
     theme: CardTheme.CANDY,
     padding: CardPadding.md,
